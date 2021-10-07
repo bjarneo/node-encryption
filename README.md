@@ -3,7 +3,8 @@ This package will simplify the process of encrypting and decrypting data for you
 
 ### How to use this package
 ```javascript
-const {} = require('node-encryption');
+const { encrypt, decrypt } = require('node-encryption');
+
 
 const text = 'This will be encrypted';
 const encryptionKey = 'mysecretkey1337';
