@@ -1,6 +1,10 @@
 # node-encryption
 This package will simplify the process of encrypting and decrypting data for your application based on the aes-256-gcm algorithm.
 
+```bash
+$ npm install --save node-encryption
+```
+
 ### How to use this package
 ```javascript
 const { encrypt, decrypt } = require('node-encryption');
