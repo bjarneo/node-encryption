@@ -30,5 +30,16 @@ console.log(decrypted.toString());
 // Output: This will be encrypted
 ```
 
+### How to encrypt a file
+```javascript
+const image = fs.readFileSync('./shyguy.png');
+
+const encryptionKey = 'mysecretkey1337';
+
+const encrypted = encrypt(image, encryptionKey);
+
+const decrytedImageBuffer = decrypt(encrypted, encryptionKey);
+```
+
 ### License
 MIT - see LICENSE
