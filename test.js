@@ -1,4 +1,5 @@
 const assert = require('assert');
+const fs = require('fs');
 
 const { encrypt, decrypt } = require('./index');
 
@@ -24,4 +25,21 @@ describe('Encryption', () => {
 
         assert(decrypted.toString() === text);
     });
+
+    it('should encrypt and decrypt an image', () => {
+        const image = fs.readFileSync('./shyguy.png');
+
+        const imageHex = image.toString('hex');
+
+        const encryptionKey = 'mysecretkey1337';
+
+        const encrypted = encrypt(image, encryptionKey);
+
+        const decrypted = decrypt(encrypted, encryptionKey);
+
+        assert(decrypted.toString('hex') === imageHex);
+    });
+    
+
+
 });
