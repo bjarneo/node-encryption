@@ -64,8 +64,7 @@ export function decrypt(
     const decipher = crypto.createDecipheriv(ALGORITHM, key, iv);
     decipher.setAuthTag(tag);
 
-    let decrypted = decipher.update(text);
-    decrypted = Buffer.concat([decrypted, decipher.final()]);
+    const decrypted = Buffer.concat([decipher.update(text), decipher.final()]);
 
     return decrypted;
 }
