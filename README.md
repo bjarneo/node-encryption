@@ -1,10 +1,6 @@
 # node-encryption
 
-This package will simplify the process of encrypting and decrypting data for your application based on the aes-256-gcm algorithm.
-
-## What this is
-
-A Node.js module providing robust AES-256-GCM encryption and decryption utilities for protecting sensitive data.
+This package will simplify the process of encrypting and decrypting data for your application providing robust AES-256-GCM encryption and decryption utilities for protecting sensitive data.
 
 ```bash
 $ npm install --save node-encryption
