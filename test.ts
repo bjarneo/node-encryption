@@ -1,12 +1,14 @@
-const assert = require('assert');
-const fs = require('fs');
+import assert from 'assert';
+import fs from 'fs';
+import 'mocha';
 
-const { encrypt, decrypt } = require('./index');
+import { encrypt, decrypt } from './src/index';
+
+const encryptionKey = 'mysecretkey1337';
 
 describe('Encryption', () => {
     it('should encrypt and decrypt text', () => {
         const text = 'This will be encrypted';
-        const encryptionKey = 'mysecretkey1337';
 
         const encrypted = encrypt(text, encryptionKey);
 
@@ -17,7 +19,6 @@ describe('Encryption', () => {
 
     it('should encrypt and decrypt a buffer', () => {
         const text = 'This will be encrypted';
-        const encryptionKey = 'mysecretkey1337';
 
         const encrypted = encrypt(Buffer.from(text), encryptionKey);
 
@@ -31,15 +32,10 @@ describe('Encryption', () => {
 
         const imageHex = image.toString('hex');
 
-        const encryptionKey = 'mysecretkey1337';
-
         const encrypted = encrypt(image, encryptionKey);
 
         const decrypted = decrypt(encrypted, encryptionKey);
 
         assert(decrypted.toString('hex') === imageHex);
     });
-    
-
-
 });

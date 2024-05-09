@@ -1,14 +1,19 @@
 # node-encryption
+
 This package will simplify the process of encrypting and decrypting data for your application based on the aes-256-gcm algorithm.
+
+## What this is
+
+A Node.js module providing robust AES-256-GCM encryption and decryption utilities for protecting sensitive data.
 
 ```bash
 $ npm install --save node-encryption
 ```
 
 ### How to use this package
+
 ```javascript
 const { encrypt, decrypt } = require('node-encryption');
-
 
 const text = 'This will be encrypted';
 const encryptionKey = 'mysecretkey1337';
@@ -20,7 +25,6 @@ const decrypted = decrypt(encrypted, encryptionKey);
 console.log(decrypted.toString());
 // Output: This will be encrypted
 
-
 // By using a buffer
 const encryptBuffer = encrypt(Buffer.from(text), encryptionKey);
 
@@ -30,7 +34,8 @@ console.log(decrypted.toString());
 // Output: This will be encrypted
 ```
 
-### How to encrypt a file
+### How to encrypt & decrypt a file
+
 ```javascript
 const image = fs.readFileSync('./shyguy.png');
 
@@ -41,5 +46,14 @@ const encrypted = encrypt(image, encryptionKey);
 const decrytedImageBuffer = decrypt(encrypted, encryptionKey);
 ```
 
+### Development
+
+```bash
+$ npm install
+$ npm test
+```
+
 ### License
+
 MIT - see LICENSE
+
