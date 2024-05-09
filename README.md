@@ -28,9 +28,9 @@ console.log(decrypted.toString());
 // By using a buffer
 const encryptBuffer = encrypt(Buffer.from(text), encryptionKey);
 
-const decyptBuffer = decrypt(encryptBuffer, encryptionKey);
+const decryptBuffer = decrypt(encryptBuffer, encryptionKey);
 
-console.log(decrypted.toString());
+console.log(decryptBuffer.toString());
 // Output: This will be encrypted
 ```
 
