@@ -37,6 +37,7 @@ export function encrypt(
     const cipher = crypto.createCipheriv(ALGORITHM, key, iv);
     const encrypted = Buffer.concat([cipher.update(data), cipher.final()]);
     const tag = cipher.getAuthTag();
+
     return Buffer.concat([salt, iv, tag, encrypted]).toString('hex');
 }
 
