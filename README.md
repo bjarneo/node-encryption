@@ -9,7 +9,7 @@ $ npm install --save node-encryption
 ### How to use this package
 
 ```javascript
-const { encrypt, decrypt } = require('node-encryption');
+import { encrypt, decrypt } from 'node-encryption';
 
 const text = 'This will be encrypted';
 const encryptionKey = 'mysecretkey1337';
